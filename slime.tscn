@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b60b34cjw6wq3"]
+
+[ext_resource type="Texture2D" uid="uid://cmbqcku3lyu2k" path="res://art/GalileoGalilei/smile/slime_idle[1:3].png" id="1_84bw7"]
+[ext_resource type="Script" path="res://area_2d.gd" id="1_bpeip"]
+[ext_resource type="Texture2D" uid="uid://dounjs7hs4ixy" path="res://art/GalileoGalilei/smile/slime_idle[2:3].png" id="2_dpf66"]
+[ext_resource type="Texture2D" uid="uid://3lfbn4l28oq0" path="res://art/GalileoGalilei/smile/slime_idle[3:3].png" id="3_ndqor"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uubn7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_84bw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dpf66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ndqor")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6egg"]
+radius = 150.083
+
+[node name="Slime" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_bpeip")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_uubn7")
+animation = &"idle"
+frame_progress = 0.464518
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.8, -2)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CircleShape2D_l6egg")
