@@ -1,0 +1,113 @@
+[gd_scene load_steps=21 format=3 uid="uid://hfvv836ps6n6"]
+
+[ext_resource type="Script" path="res://Cats/CryBanana/cry_banana.gd" id="1_rcxg2"]
+[ext_resource type="Texture2D" uid="uid://c0td77ekfvw48" path="res://Cats/CryBanana/Sprite/cry_banana_active[1:12].png" id="2_qd3d1"]
+[ext_resource type="Texture2D" uid="uid://02m5bmfoq776" path="res://Cats/CryBanana/Sprite/cry_banana_active[2:12].png" id="3_sbkrb"]
+[ext_resource type="Texture2D" uid="uid://cvfo5pnqftbr2" path="res://Cats/CryBanana/Sprite/cry_banana_active[3:12].png" id="4_t8xb4"]
+[ext_resource type="Texture2D" uid="uid://cqng68g584dd0" path="res://Cats/CryBanana/Sprite/cry_banana_active[4:12].png" id="5_fwa3h"]
+[ext_resource type="Texture2D" uid="uid://bocmdlk0dtfpi" path="res://Cats/CryBanana/Sprite/cry_banana_active[5:12].png" id="6_rpuod"]
+[ext_resource type="Texture2D" uid="uid://c4fr8ke34k7hw" path="res://Cats/CryBanana/Sprite/cry_banana_active[6:12].png" id="7_e64eb"]
+[ext_resource type="Texture2D" uid="uid://2a3431c72w4c" path="res://Cats/CryBanana/Sprite/cry_banana_active[7:12].png" id="8_kavgb"]
+[ext_resource type="Texture2D" uid="uid://lbusq5jg3ngs" path="res://Cats/CryBanana/Sprite/cry_banana_active[8:12].png" id="9_5svgw"]
+[ext_resource type="Texture2D" uid="uid://cm5pe5fv802kp" path="res://Cats/CryBanana/Sprite/cry_banana_active[9:12].png" id="10_oj4gb"]
+[ext_resource type="Texture2D" uid="uid://bkfjnhjbbbee" path="res://Cats/CryBanana/Sprite/cry_banana_active[10:12].png" id="11_vdmsr"]
+[ext_resource type="Texture2D" uid="uid://fkns4026ffrq" path="res://Cats/CryBanana/Sprite/cry_banana_active[11:12].png" id="12_ehp0l"]
+[ext_resource type="Texture2D" uid="uid://b2a1rera3wbjs" path="res://Cats/CryBanana/Sprite/cry_banana_active[12:12].png" id="13_fa7w8"]
+[ext_resource type="Texture2D" uid="uid://b2cpdv3h7di7s" path="res://Cats/CryBanana/Sprite/cry_banana_idle[1:3].png" id="14_212cf"]
+[ext_resource type="Texture2D" uid="uid://dgocsgek21qt4" path="res://Cats/CryBanana/Sprite/cry_banana_idle[3:3].png" id="15_nrxm1"]
+[ext_resource type="Texture2D" uid="uid://djyn30ive6r1n" path="res://Cats/CryBanana/Sprite/cry_banana_idle[2:3].png" id="16_uwd8g"]
+[ext_resource type="Texture2D" uid="uid://c2o3rtyru3ktu" path="res://Cats/CryBanana/Sprite/cry_banana_walk[2:3].png" id="17_be60e"]
+[ext_resource type="Texture2D" uid="uid://ddw3l202qs2jk" path="res://Cats/CryBanana/Sprite/cry_banana_walk[3:3].png" id="18_qya13"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2omqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qd3d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sbkrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t8xb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fwa3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rpuod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e64eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kavgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5svgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oj4gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vdmsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ehp0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fa7w8")
+}],
+"loop": true,
+"name": &"active",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_212cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nrxm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uwd8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uwd8g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_212cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_be60e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qya13")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxo4e"]
+radius = 96.0
+height = 360.0
+
+[node name="CryBanana" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+motion_mode = 1
+script = ExtResource("1_rcxg2")
+cat_name = "Cry Banana"
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2omqd")
+animation = &"move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("CapsuleShape2D_cxo4e")
