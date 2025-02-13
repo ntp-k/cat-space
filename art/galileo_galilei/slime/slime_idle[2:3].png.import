@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmbqcku3lyu2k"
-path="res://.godot/imported/slime_idle[1:3].png-304a68bee3da3144142570b40eada95a.ctex"
+uid="uid://dounjs7hs4ixy"
+path="res://.godot/imported/slime_idle[2:3].png-1e5fd60370d6648d414ebeb56328e9dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/GalileoGalilei/smile/slime_idle[1:3].png"
-dest_files=["res://.godot/imported/slime_idle[1:3].png-304a68bee3da3144142570b40eada95a.ctex"]
+source_file="res://Art/galileo_galilei/slime/slime_idle[2:3].png"
+dest_files=["res://.godot/imported/slime_idle[2:3].png-1e5fd60370d6648d414ebeb56328e9dd.ctex"]
 
 [params]
 
